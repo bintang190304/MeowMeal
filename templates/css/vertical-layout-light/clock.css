@@ -1,0 +1,45 @@
+.clock {
+  height: 10vh; /* Tinggi jam disesuaikan untuk muat di dalam card body */
+  color: white;
+  font-size: 10vh; /* Ukuran font disesuaikan */
+  font-family: sans-serif;
+  line-height: 10vh; /* Tinggi baris disesuaikan */
+  display: flex;
+  justify-content: center; /* Untuk menengahkan jam di dalam card */
+  align-items: center; /* Untuk menengahkan jam di dalam card */
+  position: relative;
+  overflow: hidden;
+  background: transparent; /* Hapus warna latar belakang */
+}
+
+.clock::before,
+.clock::after {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+.clock > div {
+  display: flex;
+}
+
+.tick {
+  line-height: 10vh;
+}
+
+.tick-hidden {
+  opacity: 0;
+}
+
+.move {
+  animation: move linear 1s infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10vh); /* Animasi geser vertikal */
+  }
+}
